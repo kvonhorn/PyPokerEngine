@@ -51,6 +51,7 @@ class HandEvaluator:
           "low" : hand_low
         },
         "hole" : {
+          "cards": [Card.int_to_str(card) for card in hole],
           "high" : hole_high,
           "low" : hole_low
         }
