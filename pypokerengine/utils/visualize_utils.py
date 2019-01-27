@@ -101,10 +101,7 @@ def visualize_hand_info(info, round_state):
     uuid = info["uuid"]
     name = _fetch_player_name(uuid, round_state)
     hand, hole = info["hand"]["hand"], info["hand"]["hole"]
-    ls.append(_visualize_item("%s (%s)" % (name, uuid)))
-    ls.append(_visualize_sub_item("hand => %s (high=%d, low=%d)" % (
-        hand["strength"], hand["high"], hand["low"])))
-    ls.append(_visualize_sub_item("hole => [%s, %s]" % (hole["high"], hole["low"])))
+    ls.append(_visualize_item("%s (%s): hand => %s (%s)" % (name, uuid, hand["strength"], str(hole["cards"]))))
     return "\n".join(ls)
 
 def visualize_player(player):
